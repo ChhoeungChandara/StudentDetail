@@ -9,4 +9,5 @@ public interface StudentService {
 	List<Student> findStudent();
 	Student findStudentById(Integer id);
 	Student updateStudent(Integer id,Student student);
+	void delete(Integer id);
 }
