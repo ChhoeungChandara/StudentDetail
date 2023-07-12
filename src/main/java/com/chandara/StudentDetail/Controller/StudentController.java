@@ -1,6 +1,7 @@
 package com.chandara.StudentDetail.Controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,6 +38,12 @@ public class StudentController {
 	@PutMapping("{id}")
 	public ResponseEntity<?> UpdateStudent(@PathVariable Integer id,@RequestBody Student student){
 		return ResponseEntity.ok(studentService.updateStudent(id, student));
+	}
+	
+	@DeleteMapping("{id}")
+	public ResponseEntity<?> delete(@PathVariable Integer id){
+		studentService.delete(id);
+		return ResponseEntity.ok("delete success");
 	}
 	
 
